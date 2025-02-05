@@ -1,0 +1,92 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; 
+    min-height: 100vh; 
+    background-color: #f0f0f0;
+    padding: 20px; 
+    text-align: center;
+}
+
+header {
+	margin-bottom: 30px;
+}
+
+header h1 {
+	font-size: 32px;
+	font-weight: bold;
+	color: #000;
+	font-family: "Montserrat", sans-serif;
+}
+
+header p {
+	font-size: 16px;
+	color: #555;
+	font-family: "Lato", sans-serif;
+	margin-top: 12px;
+}
+
+
+#grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 20px;
+	padding-top: 10px;
+	padding-bottom: 20px;
+}
+
+.card {
+	position: relative;
+	width: 400px;
+	height: 400px;
+	border-radius: 10px;
+	overflow: hidden;
+	cursor: pointer;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(255, 255, 255, 0.8);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	transition: opacity 0.3s ease-in-out;
+}
+
+.card:hover .overlay {
+	opacity: 0;
+}
+
+.overlay h3 {
+	font-size: 18px;
+	font-weight: bold;
+	color: #000;
+	font-family: "Montserrat", sans-serif;
+}
+
+.overlay p {
+	font-size: 14px;
+	color: #333;
+	font-family: "Lato", sans-serif;
+	margin-top: 8px;
+}
