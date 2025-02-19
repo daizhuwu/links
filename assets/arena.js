@@ -16,7 +16,7 @@ let renderBlock = (block) => {
     // IMAGE BLOCK
     if (block.class === 'Image') {
         blockItem = `
-        <div class="card">
+        <div class="card" data-type="image">
             <img src="${block.image.original.url}" alt="${block.title}">
             <div class="overlay">
                 <h3>${block.title || "Untitled Image"}</h3>
@@ -26,7 +26,7 @@ let renderBlock = (block) => {
     // TEXT BLOCK
     else if (block.class === 'Text') {
         blockItem = `
-        <div class="card">
+        <div class="card" data-type="text">
             <div class="overlay">
                 <p>${block.content_html || "No text provided"}</p>
             </div>
@@ -35,7 +35,7 @@ let renderBlock = (block) => {
     // LINK BLOCK
     else if (block.class === 'Link') {
         blockItem = `
-        <div class="card">
+        <div class="card" data-type="link">
             <img src="${block.image ? block.image.original.url : 'assets/placeholder.png'}" alt="Link Preview">
             <div class="overlay">
                 <h3>${block.title || "Untitled Link"}</h3>
@@ -47,7 +47,7 @@ let renderBlock = (block) => {
 	// VIDEO BLOCK (Uploaded Video on Are.na)
 	else if (block.class === 'Attachment' && block.attachment.content_type.includes('video')) {
 		blockItem = `
-		<div class="card">
+		<div class="card" data-type="video">
 			<a href="${block.attachment.url}" target="_blank">
 				<video controls>
 					<source src="${block.attachment.url}" type="${block.attachment.content_type}">
@@ -64,7 +64,7 @@ let renderBlock = (block) => {
     // AUDIO BLOCK
     else if (block.class === 'Attachment' && block.attachment.content_type.includes('audio')) {
         blockItem = `
-        <div class="card">
+        <div class="card" data-type="audio">
             <audio controls>
                 <source src="${block.attachment.url}" type="${block.attachment.content_type}">
                 Your browser does not support the audio tag.
@@ -78,7 +78,7 @@ let renderBlock = (block) => {
 	// PDF BLOCK (Attachment)
 	else if (block.class === 'Attachment' && block.attachment.content_type.includes('pdf')) {
 		blockItem = `
-		<div class="card">
+		<div class="card" data-type="pdf">
 			<a href="${block.attachment.url}" target="_blank">
 				<div class="overlay">
 					<h3>${block.title || "PDF File"}</h3>
@@ -91,7 +91,7 @@ let renderBlock = (block) => {
 	// EMBEDDED MEDIA (YouTube, Behance)
 	else if (block.class === 'Media' && block.embed) {
 		blockItem = `
-		<div class="card">
+		<div class="card" data-type="embedded">
 			<a href="${block.source.url}" target="_blank">
 				${block.embed.html}
 				<div class="overlay">
@@ -100,7 +100,7 @@ let renderBlock = (block) => {
 				</div>
 			</a>
 		</div>`;
-	}	
+	} 
 
     // Append only if blockItem is not empty
     if (blockItem) {
@@ -112,39 +112,28 @@ let renderBlock = (block) => {
 fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-store' })
     .then(response => response.json())
     .then(data => {
-        console.log(data); // Debugging: Log the API response
-        document.querySelector('#grid').innerHTML = ''; // Clear any static content
-
+        console.log(data);
+        document.querySelector('#grid').innerHTML = '';
         data.contents.reverse().forEach(block => {
-            renderBlock(block); // Render each block dynamically
+            renderBlock(block);
+        });
+
+        // Initialize Filtering after grid is populated
+        const filterButtons = document.querySelectorAll(".filter-button");
+        filterButtons.forEach(button => {
+            button.addEventListener("click", function () {
+                filterButtons.forEach(btn => btn.classList.remove("active"));
+                this.classList.add("active");
+                const filterType = this.getAttribute("data-filter");
+                const cards = document.querySelectorAll(".card");
+                cards.forEach(card => {
+                    if (filterType === "all" || card.getAttribute("data-type") === filterType) {
+                        card.style.display = "block";
+                    } else {
+                        card.style.display = "none";
+                    }
+                });
+            });
         });
     })
     .catch(error => console.error('Error fetching Are.na data:', error));
-
-//filter
-document.addEventListener("DOMContentLoaded", function () {
-    const filterButtons = document.querySelectorAll(".filter-button");
-    const cards = document.querySelectorAll(".card");
-
-    filterButtons.forEach(button => {
-        button.addEventListener("click", function () {
-            // Remove active class from all buttons
-            filterButtons.forEach(btn => btn.classList.remove("active"));
-            
-            // Add active class to the clicked button
-            this.classList.add("active");
-            
-            // Get filter type
-            const filterType = this.getAttribute("data-filter");
-            
-            // Show or hide cards based on the filter
-            cards.forEach(card => {
-                if (filterType === "all" || card.getAttribute("data-type") === filterType) {
-                    card.style.display = "block";
-                } else {
-                    card.style.display = "none";
-                }
-            });
-        });
-    });
-});
