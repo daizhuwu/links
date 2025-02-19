@@ -100,7 +100,7 @@ let renderBlock = (block) => {
 				</div>
 			</a>
 		</div>`;
-	}
+	}	
 
     // Append only if blockItem is not empty
     if (blockItem) {
