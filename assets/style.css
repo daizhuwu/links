@@ -114,6 +114,138 @@ header p {
 	margin-top: 8px;
 }
 
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: white;
+    padding: 24px;
+    border-radius: 12px;
+    width: 700px; /* Fixed modal width */
+    height: 500px; /* Fixed modal height */
+    display: flex;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+/* Close button */
+.close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    font-size: 20px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: #555;
+}
+
+/* Modal Layout */
+.modal-body {
+    display: flex;
+    width: 100%;
+    height: 100%;
+	/* margin-top: 10px; */
+}
+
+/* Media section (left) */
+.modal-media {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f8f8f8;
+    border-radius: 8px;
+    overflow: hidden;
+    padding: 20px;
+}
+
+.modal-media img,
+.modal-media video {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Text section (right) */
+.modal-info {
+    flex: 1;
+    padding-left: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+    align-items: flex-start;
+    text-align: left;
+	margin-top: 20px;
+}
+
+/* Title and Description */
+.modal-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px; 
+}
+
+/* Title */
+.modal-info h2 {
+    font-size: 28px;
+    font-weight: bold;
+    color: #222;
+    margin-bottom: 0px; 
+    text-align: left;
+	font-family: "Montserrat", sans-serif;
+}
+
+/* Description */
+.modal-info p {
+    font-size: 16px;
+    color: #555;
+    margin-top: 10px; 
+    text-align: left;
+	font-family: "Lato", sans-serif;
+}
+
+/* Tag aligns to the bottom */
+.media-tag {
+    display: inline-block;
+    background: #e0e0e0;
+    color: #222;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 14px;
+    align-self: flex-start;
+	font-family: "Lato", sans-serif;
+}
+
+/* Modal Link for Embedded & Link */
+.modal-info a {
+    display: inline-block;
+    margin-top: 12px;
+    color: #007bff;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    text-align: left;
+}
+
+.modal-info a:hover {
+    text-decoration: underline;
+}
+
 /* Responsive Design */
 @media screen and (max-width: 1024px) {
 	#grid {
@@ -125,4 +257,23 @@ header p {
 	#grid {
 		grid-template-columns: 1fr;
 	}
+
+	.modal-content {
+        flex-direction: column;
+        width: 90%;
+        height: auto;
+    }
+
+    .modal-media {
+        width: 100%;
+        height: auto;
+    }
+
+    .modal-info {
+        padding-left: 0;
+        padding-top: 16px;
+        align-items: flex-start;
+        text-align: left;
+    }
 }
+

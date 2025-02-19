@@ -64,8 +64,29 @@
         <button class="filter-button" data-filter="pdf">PDF</button>
         <button class="filter-button" data-filter="embedded">Embedded Media</button>
     </div>
-    
+
     <div id="grid"></div>
+
+    <!-- Modal Structure -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="modal-body">
+                <div class="modal-media">
+                    <img id="modal-image" src="" alt="">
+                    <video id="modal-video" controls style="display: none;"></video>
+                </div>
+                <div class="modal-info">
+                    <div class="modal-text">
+                        <h2 id="modal-title"></h2>
+                        <p id="modal-description"></p>
+                    </div>
+                    <span id="modal-tag" class="media-tag"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
     <script src="assets/arena.js"></script>
 
 </body>
