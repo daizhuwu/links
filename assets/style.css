@@ -33,6 +33,28 @@ header p {
 	margin-top: 12px;
 }
 
+/* Filter UI Styling */
+.filter-container {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.filter-button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    font-size: 14px;
+	font-family: "Lato", sans-serif;
+}
+
+.filter-button.active {
+    background-color: #000;
+    color: #fff;
+}
 
 #grid {
 	display: grid;

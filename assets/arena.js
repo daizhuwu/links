@@ -120,3 +120,31 @@ fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-stor
         });
     })
     .catch(error => console.error('Error fetching Are.na data:', error));
+
+//filter
+document.addEventListener("DOMContentLoaded", function () {
+    const filterButtons = document.querySelectorAll(".filter-button");
+    const cards = document.querySelectorAll(".card");
+
+    filterButtons.forEach(button => {
+        button.addEventListener("click", function () {
+            // Remove active class from all buttons
+            filterButtons.forEach(btn => btn.classList.remove("active"));
+            
+            // Add active class to the clicked button
+            this.classList.add("active");
+            
+            // Get filter type
+            const filterType = this.getAttribute("data-filter");
+            
+            // Show or hide cards based on the filter
+            cards.forEach(card => {
+                if (filterType === "all" || card.getAttribute("data-type") === filterType) {
+                    card.style.display = "block";
+                } else {
+                    card.style.display = "none";
+                }
+            });
+        });
+    });
+});
