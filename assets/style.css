@@ -20,22 +20,34 @@ body {
 	padding: 0;
 }
 
+/* Header styling */
 header {
 	/* margin-bottom: 30px; */
     padding-top: 200px;
 }
-
 header h1 {
 	font-size: 6em;
 	line-height: 0.8;
 	font-weight: 800;
 	font-family: "Syne", serif;
 }
-
 header p {
 	font-size: 1em;
 	margin-top: 10px;
 	color: #555;
+}
+
+/* Overview styling */
+#overview {
+	margin-top: 50px;
+}
+#overview h2 {
+	font-size: 1.2em;
+	color: #777;
+}
+#overview h3 {
+	font-size: 1.8em;
+	font-weight: bold;
 }
 
 /* Filter UI Styling */
