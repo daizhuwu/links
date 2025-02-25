@@ -41,6 +41,7 @@ header p {
 #overview {
 	margin-top: 50px;
 }
+
 #overview h2 {
 	font-size: 1.2em;
 	color: #777;
@@ -52,22 +53,18 @@ header p {
 
 /* Filter UI Styling */
 .filter-container {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 20px;
+	display: flex;
+	justify-content: center;
+	gap: 10px;
+	margin: 30px 0;
 }
-
 .filter-button {
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    background-color: #fff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    cursor: pointer;
-    font-size: 14px;
-	font-family: "Lato", sans-serif;
+	background: none;
+	border: 1px solid #999;
+	padding: 8px 16px;
+	border-radius: 20px;
+	cursor: pointer;
 }
-
 .filter-button.active {
     background-color: #000;
     color: #fff;
