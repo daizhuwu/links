@@ -13,7 +13,8 @@ body {
     background-color: #f0f0f0;
     padding: 20px; 
     text-align: center; */
-    font-family: 'Lato', sans-serif;
+    /* font-family: 'Lato', sans-serif; */
+    font-family: "Syne", serif;
 	background-color: #EFF1F8;
 	text-align: center;
 	margin: 0;
@@ -23,32 +24,37 @@ body {
 /* Header styling */
 header {
 	/* margin-bottom: 30px; */
-    padding-top: 200px;
+    padding-top: 240px;
 }
 header h1 {
 	font-size: 6em;
 	line-height: 0.8;
 	font-weight: 800;
 	font-family: "Syne", serif;
+    margin-bottom: 240px;
 }
 header p {
-	font-size: 1em;
+	font-size: 1.2em;
 	margin-top: 10px;
-	color: #555;
+    font-family: "Syne", serif;
 }
 
 /* Overview styling */
 #overview {
-	margin-top: 50px;
+	margin-top: 300px;
+    margin-bottom: 200px;
 }
 
 #overview h2 {
 	font-size: 1.2em;
-	color: #777;
+    margin-bottom: 20px;
 }
 #overview h3 {
-	font-size: 1.8em;
-	font-weight: bold;
+	font-size: 3em;
+    font-family: "Sora", serif;
+    width: 60vw;
+    margin: 0 auto;
+    line-height: 1;
 }
 
 /* Filter UI Styling */
@@ -57,16 +63,18 @@ header p {
 	justify-content: center;
 	gap: 10px;
 	margin: 30px 0;
+    font-family: "Syne", serif;
+    color: #7783BC;
 }
 .filter-button {
 	background: none;
-	border: 1px solid #999;
+	border: 1px solid #7783BC;
 	padding: 8px 16px;
 	border-radius: 20px;
 	cursor: pointer;
 }
 .filter-button.active {
-    background-color: #000;
+    background-color: #7783BC;
     color: #fff;
 }
 
@@ -120,7 +128,6 @@ header p {
 	font-size: 24px;
     font-weight: 800;
     /* text-align: left; */
-	font-family: "Syne", serif;
     color: #7783BC;
 }
 /* .overlay p {
@@ -129,6 +136,24 @@ header p {
 	font-family: "Lato", sans-serif;
 	margin-top: 8px;
 } */
+
+/* Footer styling */
+footer {
+	margin-top: 50px;
+	padding: 20px;
+	background: #D0D0D0;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	font-size: 1em;
+	font-weight: bold;
+}
+.footer-left {
+	text-align: left;
+}
+.footer-right {
+	text-align: right;
+}
 
 /* Modal Styles */
 .modal {
