@@ -14,7 +14,7 @@ body {
     padding: 20px; 
     text-align: center; */
     font-family: 'Lato', sans-serif;
-	background-color: #ECECEF;
+	background-color: #EFF1F8;
 	text-align: center;
 	margin: 0;
 	padding: 0;
@@ -70,37 +70,41 @@ header p {
     color: #fff;
 }
 
+/* Grid styling */
 #grid {
-	display: grid;
+    display: grid;
 	grid-template-columns: repeat(3, 1fr);
-	gap: 20px;
-	padding-top: 10px;
-	padding-bottom: 20px;
+	/* gap: 20px; */
+	padding: 20px;
+	justify-content: center;
+    max-width: 1300px;
+    margin: 0 auto;
 }
-
 .card {
 	position: relative;
-	width: 400px;
-	height: 400px;
+	/* width: 400px;
+	height: 400px; */
+    width: 100%;
+    height: auto;
+    min-height: 400px;
 	border-radius: 10px;
 	overflow: hidden;
 	cursor: pointer;
-	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border: 0.8px solid #17F99A;
 }
-
 .card img {
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
 }
-
 .overlay {
 	position: absolute;
 	top: 0;
 	left: 0;
 	width: 100%;
 	height: 100%;
-	background-color: rgba(255, 255, 255, 0.8);
+	background-color: #E0E2F1;
+    opacity: 90%;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -109,24 +113,22 @@ header p {
 	transition: opacity 0.3s ease-in-out;
 	padding: 60px;
 }
-
 .card:hover .overlay {
 	opacity: 0;
 }
-
 .overlay h3 {
-	font-size: 18px;
-	font-weight: bold;
-	color: #000;
-	font-family: "Montserrat", sans-serif;
+	font-size: 24px;
+    font-weight: 800;
+    /* text-align: left; */
+	font-family: "Syne", serif;
+    color: #7783BC;
 }
-
-.overlay p {
+/* .overlay p {
 	font-size: 14px;
 	color: #333;
 	font-family: "Lato", sans-serif;
 	margin-top: 8px;
-}
+} */
 
 /* Modal Styles */
 .modal {
