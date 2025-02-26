@@ -63,34 +63,87 @@ header p {
     width: auto;
     height: auto;
 }
+
+/* Purple */
 #purple {
     width: 40%;
     top: -180px;
     left: -60px;
     z-index: 1;
     transform: scale(2.6) rotate(10deg);
+    /* animation: floatPurple 6s ease-in-out infinite;
+    animation-delay: 0s; */
 }
+
+/* @keyframes floatPurple {
+    0%, 100% {
+        transform: scale(2.6) rotate(10deg) translateY(0);
+    }
+    50% {
+        transform: scale(2.6) rotate(10deg) translateY(-20px);
+    }
+} */
+
+/* Pink */
 #pink {
     width: 15%;
     bottom: -160px;
     left: 0px;
     z-index: 2;
     transform: scale(0.7);
+    animation: floatPink 6s ease-in-out infinite;
+    animation-delay: 1s;
 }
+
+@keyframes floatPink {
+    0%, 100% {
+        transform: scale(0.7) translateY(0);
+    }
+    50% {
+        transform: scale(0.7) translateY(-20px);
+    }
+}
+
+/* Silver */
 #silver {
     width: 30%;
     top: -420px;
     right: -50px;
     z-index: 3;
     transform: scale(1.6) rotate(38deg);
+    animation: floatSilver 6s ease-in-out infinite;
+    animation-delay: 2s;
 }
+
+@keyframes floatSilver {
+    0%, 100% {
+        transform: scale(1.6) rotate(38deg) translateY(0);
+    }
+    50% {
+        transform: scale(1.6) rotate(38deg) translateY(-20px);
+    }
+}
+
+/* Star */
 #star {
     width: 8%;
     top: 0px;
     right: 200px;
     z-index: 20;
     transform: scale(0.4);
+    animation: floatStar 6s ease-in-out infinite;
+    animation-delay: 3s;
 }
+
+@keyframes floatStar {
+    0%, 100% {
+        transform: scale(0.4) translateY(0);
+    }
+    50% {
+        transform: scale(0.4) translateY(-20px);
+    }
+}
+
 /* #circle {
     width: 25%;
     bottom: -400px;
