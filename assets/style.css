@@ -478,33 +478,250 @@ footer p{
 }
 
 /* Responsive Design */
+/* tablet */
 @media screen and (max-width: 1024px) {
 	#grid {
 		grid-template-columns: repeat(2, 1fr);
 	}
+    header {
+        padding-top: 150px;
+        height: 600px;
+    }
+    header h1 {
+        font-size: 4em;
+        margin-bottom: 160px;
+    }
+    header p {
+        font-size: 1em;
+    }
+    #overview {
+        margin-top: 220px;
+        margin-bottom: 200px;
+        /* 3D elements positioning */
+        position: relative;
+        /* z-index: 10; */
+        /* overflow: hidden; */
+    }
+    /* Adjust 3D Elements for Tablet */
+    #purple {
+        width: 35%;
+        top: -140px;
+        left: -40px;
+        transform: scale(3.0) rotate(10deg);
+    }
+    #pink {
+        width: 20%;
+        bottom: -200px;
+        left: 0px;
+        transform: scale(0.7);
+    }
+    @keyframes floatPink {
+        0%, 100% {
+            transform: scale(0.8) translateY(0);
+        }
+        50% {
+            transform: scale(0.8) translateY(-20px);
+        }
+    }
+    #silver {
+        width: 25%;
+        top: -300px;
+        right: -30px;
+        transform: scale(1.8) rotate(38deg);
+    }
+    @keyframes floatSilver {
+        0%, 100% {
+            transform: scale(1.8) rotate(38deg) translateY(0);
+        }
+        50% {
+            transform: scale(1.8) rotate(38deg) translateY(-20px);
+        }
+    }
+    #star {
+        width: 10%;
+        top: 50px;
+        right: 20px;
+        transform: scale(0.8);
+    }
+    @keyframes floatStar {
+        0%, 100% {
+            transform: scale(0.8) translateY(0);
+        }
+        50% {
+            transform: scale(0.8) translateY(-20px);
+        }
+    }
+    #third.sticky {
+        top: -40px;
+        right: -20px;
+        transform: rotate(-120deg) scale(1.2);
+    }
+    
+    #fourth.sticky {
+        bottom: 40px;
+        left: 40px;
+        transform: rotate(-30deg) scale(2);
+    } 
+    footer p {
+        font-size: 3.2em;
+    }
 }
 
+/* mobile */
 @media screen and (max-width: 768px) {
 	#grid {
 		grid-template-columns: 1fr;
 	}
-
-	.modal-content {
-        flex-direction: column;
-        width: 90%;
-        height: auto;
+    header {
+        padding-top: 240px;
+        height: 700px;
+    }
+    header h1 {
+        font-size: 1.8em;
+        /* margin-bottom: 120px; */
+    }
+    header p {
+        font-size: 1em;
+    }
+    #overview {
+        margin-top: 0px;
+        margin-bottom: 160px;
+        /* 3D elements positioning */
+        position: relative;
+        /* z-index: 10; */
+        /* overflow: hidden; */
+    }
+    #overview h2 {
+        margin-bottom: 20px;
+    }
+    #overview h3 {
+        font-size: 2em;
+    }
+    #overview-container {
+        contain: layout;
+        overflow: hidden;
+    }
+    /* Adjust 3D Elements for Mobile */
+    #purple {
+        width: 40%;
+        top: -80px;
+        left: -20px;
+        transform: scale(2.8) rotate(10deg);
+    }
+    #pink {
+        width: 25%;
+        bottom: -100px;
+        left: 0px;
+        transform: scale(0.6);
+    }
+    @keyframes floatPink {
+        0%, 100% {
+            transform: scale(0.6) translateY(0);
+        }
+        50% {
+            transform: scale(0.6) translateY(-20px);
+        }
+    }
+    #silver {
+        width: 30%;
+        top: -200px;
+        right: -20px;
+        transform: scale(1.2) rotate(38deg);
+    }
+    @keyframes floatSilver {
+        0%, 100% {
+            transform: scale(1.2) rotate(38deg) translateY(0);
+        }
+        50% {
+            transform: scale(1.2) rotate(38deg) translateY(-20px);
+        }
+    }
+    #star {
+        width: 12%;
+        top: 20px;
+        right: 10px;
+        transform: scale(0.4);
+    }
+    @keyframes floatStar {
+        0%, 100% {
+            transform: scale(0.4) translateY(0);
+        }
+        50% {
+            transform: scale(0.4) translateY(-20px);
+        }
     }
 
-    .modal-media {
-        width: 100%;
-        height: auto;
+    .filter-container {
+        display: flex;
+        overflow-x: auto;
+        white-space: nowrap;
+        justify-content: flex-start; /* Align buttons to the start */
+        -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+        /* padding: 10px; */
+        /* gap: 6px; */
     }
+    .filter-button {
+        flex: 0 0 auto; /* Prevent buttons from shrinking */
+        /* margin-right: 0px;  */
+        /* padding: 6px 12px;  */
+        font-size: 0.8em; /* Smaller font size on mobile */
+    }
+ /* Stack modal sections vertically */
+ .modal-body {
+    flex-direction: column;
+    height: auto;
+}
 
-    .modal-info {
-        padding-left: 0;
-        padding-top: 16px;
-        align-items: flex-start;
-        text-align: left;
+/* Adjust media section: full width with auto height */
+.modal-media {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px; /* add space between media and info */
+}
+
+/* Adjust text section: remove left padding and center align */
+.modal-info {
+    padding-left: 0;
+    padding-top: 16px;
+    align-items: center;
+    text-align: center;
+}
+
+/* Adjust title font size */
+.modal-info h2 {
+    font-size: 2em;
+}
+
+/* Adjust description font size */
+.modal-info p {
+    font-size: 14px;
+}
+
+/* Adjust tag styling */
+.media-tag {
+    font-size: 12px;
+    padding: 4px 8px;
+}
+
+/* Adjust link font size */
+.modal-info a {
+    font-size: 14px;
+}
+    #third.sticky {
+        /* top: 0px;
+        right: 0px;
+        transform: rotate(-120deg) scale(1.2); */
+        display: none;
+    }
+    
+    #fourth.sticky {
+        /* bottom: 0px;
+        left: 0px;
+        transform: rotate(-30deg) scale(1); */
+        display: none;
+    } 
+    footer p {
+        font-size: 1.8em;
     }
 }
 
