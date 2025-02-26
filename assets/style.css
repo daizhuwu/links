@@ -328,21 +328,18 @@ header p {
 
 
 /* Footer styling */
-footer {
-	margin-top: 50px;
-	padding: 20px;
-	background: #D0D0D0;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	font-size: 1em;
-	font-weight: bold;
-}
-.footer-left {
-	text-align: left;
-}
-.footer-right {
-	text-align: right;
+footer p{
+    margin: 160px 0px -200px 0px;
+	/* padding: 20px; */
+    font-size: 4em;
+	line-height: 0.8;
+	font-weight: 800;
+	font-family: "Syne", serif;
+    color: #7783BC;
+    text-align: right;
+    z-index: 2000;
+    position: relative;
+    border-top: 1px solid #17F99A;
 }
 
 /* Modal Styles */
