@@ -146,6 +146,7 @@ function attachModalEvents() {
         const mediaSrc = card.dataset.src;
         const mediaUrl = card.dataset.url; // New: Get the original source URL
 
+
         modalTitle.textContent = title;
         modalDescription.textContent = description;
         modalTag.textContent = mediaType.toUpperCase();

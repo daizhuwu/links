@@ -346,25 +346,26 @@ footer p{
 .modal {
     display: none;
     position: fixed;
-    z-index: 1000;
+    z-index: 3000;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(224, 226, 241, 0.6);
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .modal-content {
-    background: white;
+    background: #F8FAFF;
     padding: 24px;
-    border-radius: 12px;
+    border-radius: 8px;
+    border: 0.8px solid #17F99A;
     width: 700px; /* Fixed modal width */
     height: 500px; /* Fixed modal height */
     display: flex;
-    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+    /* box-shadow: 0px 10px 30px #E0E2F1; */
     position: relative;
 }
 
@@ -373,7 +374,7 @@ footer p{
     position: absolute;
     top: 16px;
     right: 16px;
-    font-size: 20px;
+    font-size: 3em;
     cursor: pointer;
     background: none;
     border: none;
@@ -394,10 +395,10 @@ footer p{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #f8f8f8;
+    /* background-color: #f8f8f8; */
     border-radius: 8px;
     overflow: hidden;
-    padding: 20px;
+    /* padding: 20px; */
 }
 
 .modal-media img,
@@ -430,12 +431,13 @@ footer p{
 
 /* Title */
 .modal-info h2 {
-    font-size: 28px;
+    font-size: 2.5em;
+    line-height: 0.8;
     font-weight: bold;
-    color: #222;
-    margin-bottom: 0px; 
+    color: #7783BC;
+    margin-bottom: 10px; 
     text-align: left;
-	font-family: "Montserrat", sans-serif;
+    font-family: "Syne", serif;
 }
 
 /* Description */
@@ -444,26 +446,27 @@ footer p{
     color: #555;
     margin-top: 10px; 
     text-align: left;
-	font-family: "Lato", sans-serif;
+    font-family: "Sora", serif;
 }
 
 /* Tag aligns to the bottom */
 .media-tag {
     display: inline-block;
-    background: #e0e0e0;
-    color: #222;
+    background: #7783BC;
+    color: #fff;
     padding: 6px 12px;
+    margin-bottom: 20px; 
     border-radius: 6px;
     font-size: 14px;
     align-self: flex-start;
-	font-family: "Lato", sans-serif;
+    font-family: "Sora", serif;
 }
 
 /* Modal Link for Embedded & Link */
 .modal-info a {
     display: inline-block;
     margin-top: 12px;
-    color: #007bff;
+    color: #17F99A;
     text-decoration: none;
     font-size: 16px;
     font-weight: 500;
