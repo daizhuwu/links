@@ -344,7 +344,7 @@ footer p{
 
 /* Modal Styles */
 .modal {
-    display: none !important;
+    display: none;
     position: fixed;
     z-index: 3000;
     left: 0;

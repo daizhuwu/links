@@ -146,7 +146,6 @@ function attachModalEvents() {
         const mediaSrc = card.dataset.src;
         const mediaUrl = card.dataset.url; // New: Get the original source URL
 
-
         modalTitle.textContent = title;
         modalDescription.textContent = description;
         modalTag.textContent = mediaType.toUpperCase();
@@ -216,17 +215,13 @@ function attachModalEvents() {
 
 document.addEventListener("DOMContentLoaded", function () {
     const overview = document.getElementById("overview");
-    const grid = document.getElementById("grid");
     const images = document.querySelectorAll("#third, #fourth");
 
-    function isElementInView(element) {
-        const rect = element.getBoundingClientRect();
-        return rect.top < window.innerHeight && rect.bottom > 0;
-    }
-
     function handleScroll() {
-        // Add "sticky" if either #overview or #grid is in view
-        if (isElementInView(overview) || isElementInView(grid)) {
+        const rect = overview.getBoundingClientRect();
+        
+        // Check if #overview is visible in the viewport
+        if (rect.top < window.innerHeight && rect.bottom > 0) { 
             images.forEach(img => img.classList.add("sticky"));
         } else {
             images.forEach(img => img.classList.remove("sticky"));
@@ -234,9 +229,8 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     window.addEventListener("scroll", handleScroll);
-    handleScroll(); // Run on load in case one of the sections is already in view
+    handleScroll(); // Run on load in case #overview is already in view
 });
-
 
 
 
