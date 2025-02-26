@@ -191,3 +191,71 @@ function attachModalEvents() {
         }
     });
 }
+
+
+// sticky 3D
+// document.addEventListener("DOMContentLoaded", function () {
+//     const grid = document.getElementById("grid");
+//     const images = document.querySelectorAll("#third, #fourth");
+
+//     function handleScroll() {
+//         const rect = grid.getBoundingClientRect();
+        
+//         // Check if #grid is visible in the viewport
+//         if (rect.top < window.innerHeight && rect.bottom > 0) { 
+//             images.forEach(img => img.classList.add("sticky"));
+//         } else {
+//             images.forEach(img => img.classList.remove("sticky"));
+//         }
+//     }
+
+//     window.addEventListener("scroll", handleScroll);
+//     handleScroll(); // Run on load in case #grid is already in view
+// });
+
+document.addEventListener("DOMContentLoaded", function () {
+    const overview = document.getElementById("overview");
+    const grid = document.getElementById("grid");
+    const images = document.querySelectorAll("#third, #fourth");
+
+    function isElementInView(element) {
+        const rect = element.getBoundingClientRect();
+        return rect.top < window.innerHeight && rect.bottom > 0;
+    }
+
+    function handleScroll() {
+        // Add "sticky" if either #overview or #grid is in view
+        if (isElementInView(overview) || isElementInView(grid)) {
+            images.forEach(img => img.classList.add("sticky"));
+        } else {
+            images.forEach(img => img.classList.remove("sticky"));
+        }
+    }
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Run on load in case one of the sections is already in view
+});
+
+
+
+
+// document.addEventListener("DOMContentLoaded", function () {
+//     const grid = document.getElementById("grid");
+//     const images = document.querySelectorAll("#third, #fourth");
+
+//     function handleScroll() {
+//         const rect = grid.getBoundingClientRect();
+
+//         // If grid is visible in viewport, make images sticky
+//         if (rect.top < window.innerHeight && rect.bottom > 0) { 
+//             images.forEach(img => img.classList.add("sticky"));
+//         }
+//         // Remove the else condition so they stay sticky once activated
+//     }
+
+//     window.addEventListener("scroll", handleScroll);
+//     handleScroll(); // Run on load in case grid is already in view
+// });
+
+
+

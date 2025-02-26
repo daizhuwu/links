@@ -99,6 +99,7 @@ header p {
     transform: scale(0.8);
 } */
 
+
 /* Overview styling */
 #overview {
 	margin-top: 200px;
@@ -222,12 +223,58 @@ header p {
     /* text-align: left; */
     color: #7783BC;
 }
-/* .overlay p {
-	font-size: 14px;
-	color: #333;
-	font-family: "Lato", sans-serif;
-	margin-top: 8px;
+
+/* ALWAYS sticky */
+/* #third {
+    position: fixed;
+    top: 0px;  
+    right: 0px; 
+    width: 200px; 
+    height: auto;
+    z-index: 1000; 
+    pointer-events: none; 
+    transform: rotate(0deg) scale(1.8);
+}
+#fourth {
+    position: fixed;
+    bottom: 80px; 
+    left: 80px; 
+    width: 200px; 
+    height: auto;
+    z-index: 1000; 
+    pointer-events: none; 
+    transform: rotate(-30deg) scale(2.8);
 } */
+
+/* scroll and sticky */
+.sticky-image {
+    display: none;
+    position: static; 
+    width: 200px; 
+    height: auto;
+    z-index: 1000; 
+    pointer-events: none; 
+}
+
+.sticky {
+    display: block;
+    position: fixed; 
+}
+
+#third.sticky {
+    top: 0px;
+    right: 0px;
+    transform: scale(2);
+}
+
+#fourth.sticky {
+    bottom: 80px;
+    left: 80px;
+    transform: rotate(-30deg) scale(2.8);
+} 
+
+
+
 
 /* Footer styling */
 footer {
