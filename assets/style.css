@@ -23,31 +23,102 @@ body {
 
 /* Header styling */
 header {
-	/* margin-bottom: 30px; */
     padding-top: 240px;
+
+    /* 3D elements positioning */
+    position: relative;  /* Needed for absolute positioning of elements inside */
+    height: 820px;  /* Adjust based on image height */
+    overflow: hidden;
+}
+#header-container {
+    /* 3D elements positioning */
+    position: relative;
+    text-align: center;
+    z-index: 10; /* Ensure text stays on top */
 }
 header h1 {
 	font-size: 6em;
 	line-height: 0.8;
 	font-weight: 800;
 	font-family: "Syne", serif;
+    color: #000;
     margin-bottom: 240px;
+
+    /* 3D elements positioning */
+    position: relative;
+    z-index: 10;
 }
 header p {
 	font-size: 1.2em;
 	margin-top: 10px;
     font-family: "Syne", serif;
+
+    /* 3D elements positioning */
+    position: relative;
+    z-index: 10;
 }
+/* 3D elements positioning */
+#header-container img {
+    position: absolute;
+    width: auto;
+    height: auto;
+}
+#purple {
+    width: 40%;
+    top: -180px;
+    left: -60px;
+    z-index: 1;
+    transform: scale(2.6) rotate(10deg);
+}
+#pink {
+    width: 15%;
+    bottom: -160px;
+    left: 0px;
+    z-index: 2;
+    transform: scale(0.7);
+}
+#silver {
+    width: 30%;
+    top: -420px;
+    right: -50px;
+    z-index: 3;
+    transform: scale(1.6) rotate(38deg);
+}
+#star {
+    width: 8%;
+    top: 0px;
+    right: 200px;
+    z-index: 20;
+    transform: scale(0.4);
+}
+/* #circle {
+    width: 25%;
+    bottom: -400px;
+    right: -80px;
+    z-index: 1;
+    transform: scale(0.8);
+} */
 
 /* Overview styling */
 #overview {
-	margin-top: 300px;
+	margin-top: 200px;
     margin-bottom: 200px;
+    /* 3D elements positioning */
+    position: relative;
+    /* z-index: 10; */
+    /* overflow: hidden; */
 }
-
+#overview-container {
+    /* 3D elements positioning */
+    position: relative;
+    z-index: 10;
+    contain: layout;
+}
 #overview h2 {
 	font-size: 1.2em;
     margin-bottom: 20px;
+    z-index: 20; 
+    position: relative;
 }
 #overview h3 {
 	font-size: 3em;
@@ -55,14 +126,35 @@ header p {
     width: 60vw;
     margin: 0 auto;
     line-height: 1;
+    z-index: 20; 
+    position: relative;
+}
+/* 3D elements positioning */
+#second {
+    position: absolute;
+    width: auto;
+    height: auto;
+    top: 160px;
+    left: 50px;
+    z-index: 1;
+    transform: scale(5);
+}
+#circle {
+    position: absolute; 
+    /* width: 25%; */
+    /* bottom: 200px; */
+    top: -260px;
+    right: 10px;
+    z-index: 1;
+    transform: scale(3);
 }
 
 /* Filter UI Styling */
 .filter-container {
 	display: flex;
 	justify-content: center;
-	gap: 10px;
-	margin: 30px 0;
+	gap: 6px;
+    /* margin: 30px; */
     font-family: "Syne", serif;
     color: #7783BC;
 }
