@@ -169,10 +169,11 @@ function attachModalEvents() {
             sourceLink.href = mediaUrl;
             sourceLink.target = "_blank";
             sourceLink.textContent = "View Original Source ↗";
-            sourceLink.style.display = "block";
-            sourceLink.style.marginTop = "10px";
-            sourceLink.style.color = "#007BFF";
-            sourceLink.style.textDecoration = "none";
+            // sourceLink.style.display = "block";
+            // sourceLink.style.marginTop = "10px";
+            // sourceLink.style.color = "#007BFF";
+            // sourceLink.style.textDecoration = "none";
+            sourceLink.classList.add("modal-link");
             modalLinkContainer.appendChild(sourceLink);
         }
 
@@ -193,15 +194,14 @@ function attachModalEvents() {
 }
 
 
-// sticky 3D
 // document.addEventListener("DOMContentLoaded", function () {
-//     const grid = document.getElementById("grid");
+//     const overview = document.getElementById("overview");
 //     const images = document.querySelectorAll("#third, #fourth");
 
 //     function handleScroll() {
-//         const rect = grid.getBoundingClientRect();
+//         const rect = overview.getBoundingClientRect();
         
-//         // Check if #grid is visible in the viewport
+//         // Check if #overview is visible in the viewport
 //         if (rect.top < window.innerHeight && rect.bottom > 0) { 
 //             images.forEach(img => img.classList.add("sticky"));
 //         } else {
@@ -210,47 +210,25 @@ function attachModalEvents() {
 //     }
 
 //     window.addEventListener("scroll", handleScroll);
-//     handleScroll(); // Run on load in case #grid is already in view
+//     handleScroll(); // Run on load in case #overview is already in view
 // });
 
 document.addEventListener("DOMContentLoaded", function () {
-    const overview = document.getElementById("overview");
+    const target = document.getElementById("overview");
     const images = document.querySelectorAll("#third, #fourth");
 
-    function handleScroll() {
-        const rect = overview.getBoundingClientRect();
-        
-        // Check if #overview is visible in the viewport
-        if (rect.top < window.innerHeight && rect.bottom > 0) { 
-            images.forEach(img => img.classList.add("sticky"));
-        } else {
-            images.forEach(img => img.classList.remove("sticky"));
-        }
-    }
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            const isVisible = entry.isIntersecting;
+            images.forEach(img => img.classList.toggle("sticky", isVisible));
+        });
+    }, {
+        threshold: 0.1  
+    });
 
-    window.addEventListener("scroll", handleScroll);
-    handleScroll(); // Run on load in case #overview is already in view
+    observer.observe(target);
 });
 
-
-
-// document.addEventListener("DOMContentLoaded", function () {
-//     const grid = document.getElementById("grid");
-//     const images = document.querySelectorAll("#third, #fourth");
-
-//     function handleScroll() {
-//         const rect = grid.getBoundingClientRect();
-
-//         // If grid is visible in viewport, make images sticky
-//         if (rect.top < window.innerHeight && rect.bottom > 0) { 
-//             images.forEach(img => img.classList.add("sticky"));
-//         }
-//         // Remove the else condition so they stay sticky once activated
-//     }
-
-//     window.addEventListener("scroll", handleScroll);
-//     handleScroll(); // Run on load in case grid is already in view
-// });
 
 
 

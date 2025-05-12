@@ -372,7 +372,7 @@ footer p{
 .modal-content {
     background: #F8FAFF;
     padding: 24px;
-    border-radius: 8px;
+    border-radius: var(--radius);
     border: 0.8px solid var(--accent);
     width: var(--modal-width); /* Fixed modal width */
     height: var(--modal-height); /* Fixed modal height */
@@ -486,6 +486,17 @@ footer p{
 }
 
 .modal-info a:hover {
+    text-decoration: underline;
+}
+
+/* new inline style */
+.modal-link {
+    display: block;
+    margin-top: 10px;
+    color: var(--accent);
+    text-decoration: none;
+}
+.modal-link:hover {
     text-decoration: underline;
 }
 
