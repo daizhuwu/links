@@ -67,17 +67,16 @@ let renderBlock = (block) => {
     // PDF BLOCK
     else if (block.class === 'Attachment' && block.attachment.content_type.includes('pdf')) {
         blockItem = `
-        <div class="card" data-type="pdf" data-src="${block.attachment.url}" data-title="${block.title || 'PDF File'}" data-description="Click to view PDF">
+        <div class="card" data-type="pdf" data-src="${block.attachment.url}" data-title="${block.title || 'PDF File'}">
             <div class="overlay">
                 <h3>${block.title || "PDF File"}</h3>
-                <p>Click to view PDF ↗</p>
             </div>
         </div>`;
     }
     // EMBEDDED MEDIA
     else if (block.class === 'Media' && block.embed) {
         blockItem = `
-        <div class="card" data-type="embedded" data-src="${block.source.url}" data-title="${block.title || 'Embedded Media'}" data-description="Original source" data-url="${block.source.url}">
+        <div class="card" data-type="embedded" data-src="${block.source.url}" data-title="${block.title || 'Embedded Media'}" data-url="${block.source.url}">
             ${block.embed.html}
             <div class="overlay">
                 <h3>${block.title || "Embedded Media"}</h3>
@@ -145,8 +144,17 @@ function attachModalEvents() {
         const mediaType = card.dataset.type;
         const mediaSrc = card.dataset.src;
         const mediaUrl = card.dataset.url; // New: Get the original source URL
+        
 
         if (mediaType === "text") return; //skip text modal
+
+        // Handle media display: show/hide .modal-media
+        const modalMedia = document.querySelector(".modal-media");
+        if (mediaType === "link" || mediaType === "embedded" || !mediaSrc) {
+            modalMedia.style.display = "none";
+        } else {
+            modalMedia.style.display = "flex";
+        }
 
         modalTitle.textContent = title;
         modalDescription.textContent = description;

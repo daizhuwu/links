@@ -331,13 +331,11 @@ footer p{
     align-items: center;
 }
 
-.modal-content {
+/* .modal-content {
     background: #F8FAFF;
     padding: 24px;
     border-radius: var(--radius);
     border: 0.8px solid var(--accent);
-    /* width: var(--modal-width); 
-    height: var(--modal-height); */
 
     width: 1200vw;
     height: 80vh;
@@ -345,9 +343,24 @@ footer p{
     max-height: 700px;
 
     display: flex;
-    /* box-shadow: 0px 10px 30px #E0E2F1; */
     position: relative;
-}
+} */
+
+.modal-content {
+    width: 90vw;
+    max-width: 1000px;
+    background: var(--bg-color);
+    border-radius: var(--radius);
+    border: 0.8px solid var(--accent);
+    height: auto;
+    max-height: 90vh;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding: 2rem;
+    overflow-y: auto;
+    flex-direction: column;
+  }
 
 /* Close button */
 .close {
@@ -365,33 +378,35 @@ footer p{
 .modal-body {
     display: flex;
     width: 100%;
-    height: 100%;
+    /* height: 100%; */
 	/* margin-top: 10px; */
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 2rem;
 }
 
 /* Media section (left) */
 .modal-media {
-    flex: 1;
+    flex: 1 1 45%;
+    max-height: 60vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    /* background-color: #f8f8f8; */
-    border-radius: 8px;
+    border-radius: var(--radius);
     overflow: hidden;
-    /* padding: 20px; */
 }
 
 .modal-media img,
 .modal-media video {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: cover;
-    border-radius: 8px;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    /* border-radius: var(--radius); */
 }
 
 /* Text section (right) */
 .modal-info {
-    flex: 1;
+    flex: 1 1 45%;
     padding-left: 24px;
     display: flex;
     flex-direction: column;
@@ -435,7 +450,7 @@ footer p{
     color: var(--text-color);
     padding: 6px 12px;
     margin-bottom: 20px; 
-    border-radius: 6px;
+    /* border-radius: var(--radius); */
     font-size: 14px;
     align-self: flex-start;
     font-family: var(--font-body);
@@ -680,13 +695,14 @@ footer p{
  .modal-body {
     flex-direction: column;
     height: auto;
+    gap: 0rem;
 }
 
 /* Adjust media section: full width with auto height */
 .modal-media {
     width: 100%;
     height: auto;
-    margin-bottom: 20px; /* add space between media and info */
+    /* margin-bottom: 20px; */
 }
 
 /* Adjust text section: remove left padding and center align */
