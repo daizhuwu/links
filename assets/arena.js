@@ -33,18 +33,18 @@ let renderBlock = (block) => {
     // LINK BLOCK
     else if (block.class === 'Link') {
         blockItem = `
-        <div class="card" data-type="link" data-src="${block.source.url}" data-title="${block.title || 'Untitled Link'}" data-description="Click to open link" data-url="${block.source.url}">
+        <div class="card" data-type="link" data-src="${block.source.url}" data-title="${block.title || 'Untitled Link'}" data-url="${block.source.url}">
             <img src="${block.image ? block.image.original.url : 'assets/placeholder.png'}" alt="Link Preview">
             <div class="overlay">
                 <h3>${block.title || "Untitled Link"}</h3>
-                <p><a href="${block.source.url}" target="_blank">Open Link ↗</a></p>
+
             </div>
         </div>`;
     }
     // VIDEO BLOCK
     else if (block.class === 'Attachment' && block.attachment.content_type.includes('video')) {
         blockItem = `
-        <div class="card" data-type="video" data-src="${block.attachment.url}" data-title="${block.title || 'Uploaded Video'}" data-description="Click to play video">
+        <div class="card" data-type="video" data-src="${block.attachment.url}" data-title="${block.title || 'Uploaded Video'}">
             <img src="assets/video-thumbnail.png" alt="Video Preview">
             <div class="overlay">
                 <h3>${block.title || "Uploaded Video"}</h3>
