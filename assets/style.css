@@ -467,6 +467,26 @@ footer p{
     text-decoration: underline;
 }
 
+/* text block special style */
+.card[data-type="text"] {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem;
+    background-color: var(--overlay-bg); 
+    font-family: var(--font-body);
+    font-size: 1rem;
+    color: var(--text-color);
+  }
+
+.card[data-type="text"] .overlay {
+    background: none;
+    opacity: 1;
+    position: static;
+    padding: 0;
+    transition: none;
+  }
 /* Responsive Design */
 /* tablet */
 @media screen and (max-width: 1024px) {
