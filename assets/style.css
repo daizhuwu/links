@@ -1,3 +1,15 @@
+:root {
+    --bg-color: #EFF1F8;
+    --accent: #17F99A;
+    --text-color: #7783BC;
+    --overlay-bg: #E0E2F1;
+    --font-heading: "Syne", serif;
+    --font-body: "Sora", serif;
+    --radius: 10px;
+    --modal-width: 700px;
+    --modal-height: 500px;
+  }
+
 * {
 	box-sizing: border-box;
 	margin: 0;
@@ -14,8 +26,8 @@ body {
     padding: 20px; 
     text-align: center; */
     /* font-family: 'Lato', sans-serif; */
-    font-family: "Syne", serif;
-	background-color: #EFF1F8;
+    font-family: var(--font-heading);
+	background-color: var(--bg-color);
 	text-align: center;
 	margin: 0;
 	padding: 0;
@@ -40,7 +52,7 @@ header h1 {
 	font-size: 6em;
 	line-height: 0.8;
 	font-weight: 800;
-	font-family: "Syne", serif;
+	font-family: var(--font-heading);
     color: #000;
     margin-bottom: 240px;
 
@@ -51,7 +63,7 @@ header h1 {
 header p {
 	font-size: 1.2em;
 	margin-top: 10px;
-    font-family: "Syne", serif;
+    font-family: var(--font-heading);
 
     /* 3D elements positioning */
     position: relative;
@@ -176,7 +188,7 @@ header p {
 }
 #overview h3 {
 	font-size: 3em;
-    font-family: "Sora", serif;
+    font-family: var(--font-body);
     width: 60vw;
     margin: 0 auto;
     line-height: 1;
@@ -207,18 +219,18 @@ header p {
 	justify-content: center;
 	gap: 6px;
     /* margin: 30px; */
-    font-family: "Syne", serif;
-    color: #7783BC;
+    font-family: var(--font-heading);
+    color: var(--text-color);
 }
 .filter-button {
 	background: none;
-	border: 1px solid #7783BC;
+	border: 1px solid var(--text-color);
 	padding: 8px 16px;
 	border-radius: 20px;
 	cursor: pointer;
 }
 .filter-button.active {
-    background-color: #7783BC;
+    background-color: var(--text-color);
     color: #fff;
 }
 
@@ -239,10 +251,10 @@ header p {
     width: 100%;
     height: auto;
     min-height: 400px;
-	border-radius: 10px;
+	border-radius: var(--radius);
 	overflow: hidden;
 	cursor: pointer;
-    border: 0.8px solid #17F99A;
+    border: 0.8px solid var(--accent);
 }
 .card img {
 	width: 100%;
@@ -255,7 +267,7 @@ header p {
 	left: 0;
 	width: 100%;
 	height: 100%;
-	background-color: #E0E2F1;
+	background-color: var(--overlay-bg);
     opacity: 90%;
 	display: flex;
 	flex-direction: column;
@@ -272,7 +284,7 @@ header p {
 	font-size: 24px;
     font-weight: 800;
     /* text-align: left; */
-    color: #7783BC;
+    color: var(--text-color);
 }
 
 /* ALWAYS sticky */
@@ -334,12 +346,12 @@ footer p{
     font-size: 4em;
 	line-height: 0.8;
 	font-weight: 800;
-	font-family: "Syne", serif;
-    color: #7783BC;
+	font-family: var(--font-heading);
+    color: var(--text-color);
     text-align: right;
     z-index: 2000;
     position: relative;
-    border-top: 1px solid #17F99A;
+    border-top: 1px solid var(--accent);
 }
 
 /* Modal Styles */
@@ -361,9 +373,9 @@ footer p{
     background: #F8FAFF;
     padding: 24px;
     border-radius: 8px;
-    border: 0.8px solid #17F99A;
-    width: 700px; /* Fixed modal width */
-    height: 500px; /* Fixed modal height */
+    border: 0.8px solid var(--accent);
+    width: var(--modal-width); /* Fixed modal width */
+    height: var(--modal-height); /* Fixed modal height */
     display: flex;
     /* box-shadow: 0px 10px 30px #E0E2F1; */
     position: relative;
@@ -434,10 +446,10 @@ footer p{
     font-size: 2.5em;
     line-height: 0.8;
     font-weight: bold;
-    color: #7783BC;
+    color: var(--text-color);
     margin-bottom: 10px; 
     text-align: left;
-    font-family: "Syne", serif;
+    font-family: var(--font-heading);
 }
 
 /* Description */
@@ -446,27 +458,27 @@ footer p{
     color: #555;
     margin-top: 10px; 
     text-align: left;
-    font-family: "Sora", serif;
+    font-family: var(--font-body);
 }
 
 /* Tag aligns to the bottom */
 .media-tag {
     display: inline-block;
-    background: #7783BC;
+    background: var(--text-color);
     color: #fff;
     padding: 6px 12px;
     margin-bottom: 20px; 
     border-radius: 6px;
     font-size: 14px;
     align-self: flex-start;
-    font-family: "Sora", serif;
+    font-family: var(--font-body);
 }
 
 /* Modal Link for Embedded & Link */
 .modal-info a {
     display: inline-block;
     margin-top: 12px;
-    color: #17F99A;
+    color: var(--accent);
     text-decoration: none;
     font-size: 16px;
     font-weight: 500;
