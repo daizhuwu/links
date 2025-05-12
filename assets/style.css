@@ -54,15 +54,36 @@ header h1 {
 header p {
 	font-size: 1.2em;
 	margin-top: 10px;
+    margin-bottom: 20px;
     font-family: var(--font-heading);
 
     /* 3D elements positioning */
     position: relative;
     z-index: 10;
 }
+
 #signifier {
     color: var(--text-color);
+
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: var(--font-body);
+    color: var(--text-color);
+    font-size: 1rem;
+    animation: floatText 1.5s ease-in-out infinite;
+    z-index: 20;
 }
+
+@keyframes floatText {
+    0%, 100% {
+      transform: translateX(-50%) translateY(0);
+    }
+    50% {
+      transform: translateX(-50%) translateY(6px);
+    }
+  }
+  
 /* 3D elements positioning */
 #header-container img {
     position: absolute;
