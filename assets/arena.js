@@ -148,7 +148,8 @@ function attachModalEvents() {
 
         modalTitle.textContent = title;
         modalDescription.textContent = description;
-        modalTag.textContent = mediaType.toUpperCase();
+        // modalTag.textContent = mediaType.toUpperCase();
+        modalTag.textContent = `#${mediaType.toUpperCase()}`;
 
         // Reset modal link container
         modalLinkContainer.innerHTML = "";

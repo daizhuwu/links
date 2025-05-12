@@ -17,15 +17,6 @@
 }
 
 body {
-    /* display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start; 
-    min-height: 100vh; 
-    background-color: #f0f0f0;
-    padding: 20px; 
-    text-align: center; */
-    /* font-family: 'Lato', sans-serif; */
     font-family: var(--font-heading);
 	background-color: var(--bg-color);
 	text-align: center;
@@ -69,6 +60,9 @@ header p {
     position: relative;
     z-index: 10;
 }
+#signifier {
+    color: var(--text-color);
+}
 /* 3D elements positioning */
 #header-container img {
     position: absolute;
@@ -86,15 +80,6 @@ header p {
     /* animation: floatPurple 6s ease-in-out infinite;
     animation-delay: 0s; */
 }
-
-/* @keyframes floatPurple {
-    0%, 100% {
-        transform: scale(2.6) rotate(10deg) translateY(0);
-    }
-    50% {
-        transform: scale(2.6) rotate(10deg) translateY(-20px);
-    }
-} */
 
 /* Pink */
 #pink {
@@ -156,15 +141,6 @@ header p {
     }
 }
 
-/* #circle {
-    width: 25%;
-    bottom: -400px;
-    right: -80px;
-    z-index: 1;
-    transform: scale(0.8);
-} */
-
-
 /* Overview styling */
 #overview {
 	margin-top: 200px;
@@ -221,6 +197,12 @@ header p {
     /* margin: 30px; */
     font-family: var(--font-heading);
     color: var(--text-color);
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: var(--bg-color); /* ensure it doesn’t look transparent */
+    padding: 1rem 0;
 }
 .filter-button {
 	background: none;
@@ -285,29 +267,9 @@ header p {
     font-weight: 800;
     /* text-align: left; */
     color: var(--text-color);
+    font-family: var(--font-body);
 }
 
-/* ALWAYS sticky */
-/* #third {
-    position: fixed;
-    top: 0px;  
-    right: 0px; 
-    width: 200px; 
-    height: auto;
-    z-index: 1000; 
-    pointer-events: none; 
-    transform: rotate(0deg) scale(1.8);
-}
-#fourth {
-    position: fixed;
-    bottom: 80px; 
-    left: 80px; 
-    width: 200px; 
-    height: auto;
-    z-index: 1000; 
-    pointer-events: none; 
-    transform: rotate(-30deg) scale(2.8);
-} */
 
 /* scroll and sticky */
 .sticky-image {
@@ -315,7 +277,7 @@ header p {
     position: static; 
     width: 200px; 
     height: auto;
-    z-index: 1000; 
+    z-index: 2000; 
     pointer-events: none; 
 }
 
@@ -444,12 +406,12 @@ footer p{
 /* Title */
 .modal-info h2 {
     font-size: 2.5em;
-    line-height: 0.8;
+    line-height: 1;
     font-weight: bold;
     color: var(--text-color);
     margin-bottom: 10px; 
     text-align: left;
-    font-family: var(--font-heading);
+    font-family: var(--font-body);
 }
 
 /* Description */
@@ -464,8 +426,7 @@ footer p{
 /* Tag aligns to the bottom */
 .media-tag {
     display: inline-block;
-    background: var(--text-color);
-    color: #fff;
+    color: var(--text-color);
     padding: 6px 12px;
     margin-bottom: 20px; 
     border-radius: 6px;
